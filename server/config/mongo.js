@@ -15,6 +15,8 @@ module.exports = function(config){
 	var db = mongoose.connection;
 	db.on('error',function(err){
 		console.log('Error with db ',err);
+		console.log('Tried to connect ',config.db);
+		config.db
 	});
 
 	db.once('open',function(){
