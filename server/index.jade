@@ -1,0 +1,24 @@
+doctype
+html
+		head
+			link(rel="stylesheet",href="/components/bootstrap/dist/css/bootstrap.min.css")
+			// link(rel="stylesheet",href="/components/site.css")
+			link(rel="stylesheet",href="/components/toastr/toastr.min.css")
+			base(href="/")
+		body(ng-app='app')
+				section.content
+					div(ng-view)
+	
+// my own scripts
+// vendor includes
+
+div(id="footer")
+// script(type="text/javascript",src="/components/jquery/dist/jquery.js")
+script(type="text/javascript",src="/components/angular/angular.js")
+script(type="text/javascript",src="/components/angular-resource/angular-resource.js")
+script(type="text/javascript",src="/components/angular-route/angular-route.js")
+//script(type="text/javascript",src="/components/angular-animate/angular-animate.min.js")
+script(type="text/javascript",src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js")
+//script(type="text/javascript",src="/components/moment/moment.js")
+//script(type="text/javascript",src="/components/spin.js/spin.js")
+script(type="text/javascript",src="/app/app.js")
