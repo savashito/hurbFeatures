@@ -1,18 +1,49 @@
 doctype
 html
-		head
-			link(rel="stylesheet",href="/components/bootstrap/dist/css/bootstrap.min.css")
-			// link(rel="stylesheet",href="/components/site.css")
-			link(rel="stylesheet",href="/components/toastr/toastr.min.css")
-			base(href="/")
-		body(ng-app='app')
-				section.content
-					div(ng-view)
+	head
+		link(href='http://fonts.googleapis.com/css?family=Slabo+27px',rel='stylesheet',type='text/css')
+		link(rel="stylesheet",href="/components/bootstrap/dist/css/bootstrap.min.css")
+		link(rel="stylesheet",href="/css/site.css")
+		link(rel="stylesheet",href="/components/toastr/toastr.min.css")
+		base(href="/")
+		//
+			header
+				nav.navbar.navbar-default
+					div.container-fluid
+		div.navbar-header.navbar-fixed-top.center
+			div.btn-group(role="group")
+				button.btn.btn-default(type="button") Hurb
+				button.btn.btn-default(type="button") Select your Hurb
+				button.btn.btn-default(type="button") Custumize your hurb!
+				button.btn.btn-default(type="button") Purchase your Hurb
+
+
+		//
+			nav.navbar.navbar-inverse.navbar-fix-top.cbp-af-header(role="navigation")
+				div.container-fluid  
+					div.navbar-header
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+
+						H4 Hurb
+						//
+							body		
+							div.container-fluid
+							div.row
+							div.fill-screen(style="background-image:url(img/Nevado_de_Toluca.jpg)")
+							img.img-responsive(src="img/clickHurb.png")
+							img.img-responsive(src="img/Nevado_de_Toluca.jpg")
+						
+
+	body(ng-app='app')
+		// section.content
+		div.container-fluid(ng-view)
+
+	
+		footer.container-fluid
+			h3 Con las patas!
 	
 // my own scripts
 // vendor includes
-
-div(id="footer")
 // script(type="text/javascript",src="/components/jquery/dist/jquery.js")
 script(type="text/javascript",src="/components/angular/angular.js")
 script(type="text/javascript",src="/components/angular-resource/angular-resource.js")

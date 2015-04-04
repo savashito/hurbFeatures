@@ -1,8 +1,22 @@
-h1 Find a job today
-.list-group
-	a.list-group-item(href='#')(ng-repeat="job in jobs")
-		h4.list-group-item-heading {{job.title}}
-		p.list-group-item-text {{job.desc}}
-h2 {{test}}
+// img.img-responsive(src="img/Nevado_de_Toluca.jpg")
+//div.container-fluid
+div.row
+	hurb-bg-img(src="img/Nevado_de_Toluca.jpg")
+		h2 maiiids
+	div.row.content-filler
+		H4 Te quiero matar!!
+	hurb-bg-img(src="img/pyramids-mayas.jpg" fix=true)
+	div.row.content-filler
+	hurb-bg-img(src="img/Mariposa-Monarca.jpg" fix=true)
+	div.row.content-filler
+	hurb-bg-img(src="img/castilloQuintana.jpg" fix=true)
 
-{{68+1}}
+
+	
+	// div.fill-screen(hurb-bg-img="'img/Nevado_de_Toluca.jpg'")
+//
+	div.row.content-filler
+	div.row
+		div.fill-screen(ng-style="imagenFondo")
+
+		"{'fix':fix-attachment}[fix]"

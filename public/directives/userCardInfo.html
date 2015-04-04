@@ -1,0 +1,9 @@
+<div class="panel panel-primary">
+	<div class="panel-heading center" ng-click="collapse()">Rodrigo</div>
+	<div class="panel-body" ng-hide="collapsed" ng-show='!!jobs' ng-repeat='job in jobs'>
+		Nombre : {{job.title}} <br>
+		trabajo: {{job.desc}}<br>
+		<button ng-show="!job.rank" class="btn btn-success" ng-click="knightMe(job)">Hazme tuyo!!</button>
+		<div ng-show="!!job.rank">Eres un {{job.rank}}</div>
+	</div>
+</div>
