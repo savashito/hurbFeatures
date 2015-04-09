@@ -29,8 +29,24 @@ angular.module('app').controller('mainCtrl',function($scope,$window){
 		'background-image': "url(img/Nevado_de_Toluca.jpg)",
 		'height': window.innerHeight+'px'
 	};
-	
+	// 
+	console.log('me clikesfs');
+	  // animate on click
+	  $("nav a,.down-button a").bind('click',function(){
+	  	console.log('me clikesfs');
+	  	$('html, body').stop().animate({
+	  		scrollTop: $($(this).attr('href1')).offset().top - 120
+	  	},1500,'easeInOutExpo');
 
+
+	  });
+      /*graph.click(function() {
+        wrap
+          .animate( { height: "hide" }, 2000, name )
+          .delay( 800 )
+          .animate( { height: "show" }, 2000, name );
+      });
+*/
 });
 
 
