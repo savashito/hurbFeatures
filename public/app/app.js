@@ -7,10 +7,12 @@ angular.module('app').config(function($routeProvider,$locationProvider){
 		//.when('/t',{templateUrl:'/partials/main/main',controller:'mvMainCtr'})
 			
 		// .when('/',{ templateUrl: '/partials/main',controller:'mainCtrl'});
-		.when('/',{ templateUrl: '/views/1.html',controller:'mainCtrl'});
+		.when('/',{ templateUrl: '/views/1.html',controller:'mainCtrl'})
+		.when('/planter',{ templateUrl: '/views/planter.html',controller:'mainCtrl'})
+		.when('/sensor',{ templateUrl: '/views/sensor.html',controller:'mainCtrl'});
 });
 
-angular.module('app').controller('mainCtrl',function($scope,$window){
+angular.module('app').controller('mainCtrl',function($scope,$window,$location){
 	console.log('Scopee');
     console.log("mainController",$scope);
 	$scope.test = "Hiii";
@@ -29,17 +31,27 @@ angular.module('app').controller('mainCtrl',function($scope,$window){
 		'background-image': "url(img/Nevado_de_Toluca.jpg)",
 		'height': window.innerHeight+'px'
 	};
+
+	$scope.sensor = function(){
+		$location.path( '/sensor' );
+		$location.hash('hurb');
+	};
+	$scope.planter = function(){
+		$location.path( 'planter' );
+		$location.hash('hurb');
+		
+	};
 	// 
 	console.log('me clikesfs');
 	  // animate on click
+	  /*
 	  $("nav a,.down-button a").bind('click',function(){
 	  	console.log('me clikesfs');
 	  	$('html, body').stop().animate({
 	  		scrollTop: $($(this).attr('href1')).offset().top - 120
 	  	},1500,'easeInOutExpo');
-
-
 	  });
+	  */
       /*graph.click(function() {
         wrap
           .animate( { height: "hide" }, 2000, name )
@@ -49,6 +61,29 @@ angular.module('app').controller('mainCtrl',function($scope,$window){
 */
 });
 
+angular.module('app').directive('animateButton',function(){
+	return {
+		link: function postLink(scope, iElement, iAttrs, controller){
+			// use jquery UI to make the element draggable :)
+			iElement.bind('click',function(){
+					console.log('me clikesfs');
+					$('html, body').stop().animate({
+						scrollTop: $($(this).attr('href1')).offset().top - 110
+				},1500,'easeInOutExpo');
+			});
+	  	/*
+			var img = iElement.find('img');
+			//iElement.offset({ top: 80, left: 50});
+			img.height(256);
+
+			// img.height(5);
+			iElement.draggable();
+
+			console.log(iElement);*/
+
+		}
+	};
+});
 
 angular.module('app').directive('userInfoCard',function(){
   return {

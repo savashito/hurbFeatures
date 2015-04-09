@@ -15,8 +15,14 @@ header,footer{
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
+.top-box{
+	padding-top:70px;
+}
 .down-button{
 	bottom:40px;
+	/*padding-left:2.0em; */
+	/*position: absolute;*/
+	padding-left:35%;
 }
 .down-button i{
 	color: white;
@@ -24,7 +30,7 @@ header,footer{
 
 .draggable {
 	width: 50px; height: 50px; 
-	padding: 3.5em; 
+	padding: 2.0em; 
 	// background-color: #fff;
 }
 
@@ -35,6 +41,9 @@ header,footer{
 }
 
 .title-image{
+	// position: absolute;
+	top:20%;
+	/*
 	position: absolute;
 	padding: 20px;
 	top:0%;
@@ -42,17 +51,41 @@ header,footer{
 	margin-right: -50%;
 	transform:translate(-50%,-50%);
 	-webkit-transform:translate(-50%,50%);
+	*/
 }
-.text-banner{
+
+.text-tittle{
+	
+	text-justify: inter-word;
+	/*margin: 40px 2em;*/
+	padding: 2.0em; 
+	background-color: rgba(245, 245, 245, 0.4);
+}
+.text-tittle h1{
+	font-size: 44px;
 	text-align: center;
-	margin: 40px 20px;
+}
+
+.text-tittle p{
+	font-size: 18px;
+	text-align: center;
+}
+
+.text-banner{
+	
+    // text-justify: inter-word;
+	margin: 40px 2em;
+	padding: 2.0em; 
+	background-color: rgba(245, 245, 245, 0.4);
 }
 .text-banner h1{
 	font-size: 44px;
+	text-align: center;
 }
 
 .text-banner p{
 	font-size: 18px;
+	text-align: justify;
 }
 
 .activity-section{
