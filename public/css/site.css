@@ -8,15 +8,29 @@ header,footer{
 	padding: 20px;
 	text-align: center;
 }
+
+.draggable {
+	width: 50px; height: 50px; 
+	padding: 3.5em; 
+	// background-color: #fff;
+}
+.well {
+   background-color: rgba(245, 245, 245, 0.4);
+}
 .center{
 	/*background-color: #000;*/
 	color: #ddd;
 	padding: 20px;
 	text-align: center;
 }
+.inner-image{
+	color: #222;
+}
 .content-filler{
 	min-height: 50px;
 	background-color: #222;
+	color: #fff;
+	text-align: center;
 }
 .fix-attachment{
 	background-attachment: fixed;
@@ -26,9 +40,11 @@ header,footer{
 	margin-left: 0px auto;
 	/*border: 3px solid darkblue;*/
 	box-shadow: rgba(0,0,0,0) 10px 10px 60px;
+	//background-position: center;
 
 }
 .fill-screen{
+	color: #222;
 	background-size: cover;
 	background-position: center;
 }

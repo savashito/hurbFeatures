@@ -31,6 +31,8 @@ module.exports = function(config){
 	app.use(bodyParser.json());
 	app.use(logger('dev'));
 	app.enable('verbose errors');
+	app.__dirname = __dirname;
+	// console.log('dir '+express.static(__dirname+'/../../public/views/main.html'));
 	// set server side views
 	// automatically serves index.jade
 	app.set('views',__dirname + 'server');

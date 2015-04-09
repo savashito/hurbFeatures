@@ -3,11 +3,11 @@ angular.module('app',['ngResource','ngRoute',
 
 angular.module('app').config(function($routeProvider,$locationProvider){
 	$locationProvider.html5Mode(true);
-	console.log('Muaiais');
 	$routeProvider
 		//.when('/t',{templateUrl:'/partials/main/main',controller:'mvMainCtr'})
 			
-		.when('/',{ templateUrl: '/partials/main',controller:'mainCtrl'});
+		// .when('/',{ templateUrl: '/partials/main',controller:'mainCtrl'});
+		.when('/',{ templateUrl: '/views/1.html',controller:'mainCtrl'});
 });
 
 angular.module('app').controller('mainCtrl',function($scope,$window){
@@ -46,13 +46,39 @@ angular.module('app').directive('userInfoCard',function(){
 		};
 		$scope.collapse = function(){
 			$scope.collapsed=!$scope.collapsed;
-		}
-    },
-    //scope: true, // private scope with parent
+		};
+	},
+	//scope: true, // private scope with parent
     scope: {
 		jobs:'=', // private scope with parent
 	}
   };
+});
+
+
+angular.module('app').directive('draggable',function(){
+	return {
+		controller: function($scope){
+
+		},
+
+		template: "<div ng-transclude class ='draggable'></div>",
+		transclude: true,
+		link: function postLink(scope, iElement, iAttrs, controller){
+			// use jquery UI to make the element draggable :)
+			
+			var img = iElement.find('img');
+			//iElement.offset({ top: 80, left: 50});
+			img.height(256);
+
+			// img.height(5);
+			iElement.draggable();
+
+			console.log(iElement);
+		}
+	};
+
+
 });
 
 angular.module('app').directive('hurbBgImg',function(){
@@ -78,7 +104,7 @@ angular.module('app').directive('hurbBgImg',function(){
 		});
 
 		// fix-attachment
-		console.log('scopeFix',$scope.fix=='fix');
+		console.log('scopeFix',$scope.fix);
 		$scope.imagenFondo =
 		{
 			'background-image': "url("+$scope.src+")",
@@ -93,10 +119,10 @@ angular.module('app').directive('hurbBgImg',function(){
 	
 	},
 	templateUrl: "directives/hurbBgImg.html",
+	transclude: true,
 	scope:{
 		src:'@src',
 		fix:'@fix',
-
 	}
   };
 });

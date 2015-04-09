@@ -23,7 +23,10 @@ module.exports = function(app)
 	// all request are handle by this
 	app.get('*',function (req,res){
 		console.log('renderiando index ',req.user);
-		res.render('index');
+		var dir = app.__dirname+'public/views/main.html';
+		console.log(dir);
+		res.sendFile(dir);
+		//res.render('index');
 	});
 
 
