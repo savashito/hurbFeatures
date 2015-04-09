@@ -4,9 +4,31 @@
 		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'></link>
 		<link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css"></link>
 		<link rel="stylesheet" href="/css/site.css" ></link>
+		<link rel="stylesheet" href="/components/fontawesome/css/font-awesome.min.css" ></link>
 		<link rel="stylesheet" href="/components/toastr/toastr.min.css"></link>
 		<base href="/"></base>
 	</head>
+
+	<header id="top">
+		<nav class="navbar navbar-inverse navbar-fixed-top cbp-af-header" role="navigation">
+			<div class="container-fluid">
+				
+<!-- 				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar"/>
+						Muahaha
+				</div> -->
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#hurb">Hurb</a></li>
+					<li><a href="#sensor">Sensor</a></li>
+				</ul>
+
+
+			</div>
+		</nav>
+	</header>
 
 	<body ng-app='app'>
 		<div class='container-fluid' ng-view>

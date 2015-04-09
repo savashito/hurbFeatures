@@ -9,12 +9,69 @@ header,footer{
 	text-align: center;
 }
 
+.navbar{
+	margin-bottom: 0px;
+	padding: 30px 15px;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.down-button{
+	bottom:40px;
+}
+.down-button i{
+	color: white;
+}
+
 .draggable {
 	width: 50px; height: 50px; 
 	padding: 3.5em; 
 	// background-color: #fff;
 }
+
+
+.title-row{
+	position: relative;
+	min-height: 300px;
+}
+
+.title-image{
+	position: absolute;
+	padding: 20px;
+	top:0%;
+	left:50%;
+	margin-right: -50%;
+	transform:translate(-50%,-50%);
+	-webkit-transform:translate(-50%,50%);
+}
+.text-banner{
+	text-align: center;
+	margin: 40px 20px;
+}
+.text-banner h1{
+	font-size: 44px;
+}
+
+.text-banner p{
+	font-size: 18px;
+}
+
+.activity-section{
+	margin:50px;
+}
+.activity-element{
+	text-align: : center;
+}
+.activity-element img{
+	width: 150px;
+	height: 150px;
+}
+
+.contact-us{
+	margin: 50px;
+	text-align: center;
+}
 .well {
+
    background-color: rgba(245, 245, 245, 0.4);
 }
 .center{
@@ -27,13 +84,19 @@ header,footer{
 	color: #222;
 }
 .content-filler{
-	min-height: 50px;
-	background-color: #222;
-	color: #fff;
-	text-align: center;
+	// min-height: 50px;
+	background-color: #ddd; // rgba(245, 245, 245, 0.4);
+
+	//color: #fff;
+	//text-align: center;
 }
 .fix-attachment{
 	background-attachment: fixed;
+}
+@media (max-width: 1024px){
+	.fixed-attachment{
+		background-attachment: scroll;
+	}
 }
 
 .img-responsive{
