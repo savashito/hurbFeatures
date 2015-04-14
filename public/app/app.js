@@ -39,8 +39,24 @@ angular.module('app').controller('mainCtrl',function($scope,$window,$location){
 	$scope.planter = function(){
 		$location.path( 'planter' );
 		$location.hash('hurb');
-		
+
 	};
+
+	$scope.tAlert = [
+		{name:'Visual',desc:'Esto es visual'},
+		{name:'Proximity',desc:'Esto es cerca'},
+		{name:'Anywhere',desc:'Esto es lejos'},
+	];
+
+/*
+	{	'Visual':'esto es visual',
+						'Proximity':'Miauuu',
+						'Anywhere':'sdcvf ygh fg'
+					};
+					*/
+	// $scope.tAlert = ['Visual','Proximity','Anywhere'];
+
+		// };
 	// 
 	console.log('me clikesfs');
 	  // animate on click
@@ -58,7 +74,8 @@ angular.module('app').controller('mainCtrl',function($scope,$window,$location){
           .delay( 800 )
           .animate( { height: "show" }, 2000, name );
       });
-*/
+*/	
+	$scope.checkboxModel = { value1:false,value3:false,value2:false,};
 });
 
 angular.module('app').directive('animateButton',function(){
@@ -68,7 +85,7 @@ angular.module('app').directive('animateButton',function(){
 			iElement.bind('click',function(){
 					console.log('me clikesfs');
 					$('html, body').stop().animate({
-						scrollTop: $($(this).attr('href1')).offset().top - 110
+						scrollTop: $($(this).attr('href1')).offset().top - 30
 				},1500,'easeInOutExpo');
 			});
 	  	/*
@@ -128,8 +145,37 @@ angular.module('app').directive('draggable',function(){
 			console.log(iElement);
 		}
 	};
+});
+
+angular.module('app').directive('hurbCombo',function(){
+	return {
+			controller: function($scope,$window){
+				$scope.selected = 0;
+				$scope.open = function(){
+					console.log('Miau <3 MUahaha');
+				};
+				$scope.close = function(index){
+					// console.log('Close <3 '+index);
+					$scope.selected = index;
+				};
 
 
+				// console.log('sel ',$scope.options[$scope.selected]);
+
+
+				//$scope.options = ["te quiero","Matar!","AHora!!"];
+				// $scope.options = $scope.op[$scope.options];
+				// console.log($scope.options);
+				// console.log('op',$scope.op);
+				// $scope.optionsf = $scope.options;
+			},
+			templateUrl: "directives/hurbCombo.html",
+			scope:
+			{
+				options:'=',
+				// op:'='
+			}
+	};
 });
 
 angular.module('app').directive('hurbBgImg',function(){
@@ -156,6 +202,8 @@ angular.module('app').directive('hurbBgImg',function(){
 
 		// fix-attachment
 		console.log('scopeFix',$scope.fix);
+
+		// console.log('op',$scope.op);
 		$scope.imagenFondo =
 		{
 			'background-image': "url("+$scope.src+")",

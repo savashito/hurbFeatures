@@ -11,7 +11,7 @@ header,footer{
 
 .navbar{
 	margin-bottom: 0px;
-	padding: 30px 15px;
+	/*padding: 30px 15px;*/
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
@@ -25,7 +25,7 @@ header,footer{
 	padding-left:35%;
 }
 .down-button i{
-	color: white;
+	/*color: white;*/
 }
 
 .draggable {
@@ -57,9 +57,13 @@ header,footer{
 .text-tittle{
 	
 	text-justify: inter-word;
+
 	/*margin: 40px 2em;*/
 	padding: 2.0em; 
-	background-color: rgba(245, 245, 245, 0.4);
+	margin: 40px 2em;
+	/*background-color: rgba(245, 245, 245, 0.4);*/
+	color: #ddd;
+	background-color: rgba(20, 20, 20, 0.6);
 }
 .text-tittle h1{
 	font-size: 44px;
@@ -67,7 +71,7 @@ header,footer{
 }
 
 .text-tittle p{
-	font-size: 18px;
+	font-size: 26px;
 	text-align: center;
 }
 
@@ -75,8 +79,10 @@ header,footer{
 	
     // text-justify: inter-word;
 	margin: 40px 2em;
+	color: #ddd;
 	padding: 2.0em; 
-	background-color: rgba(245, 245, 245, 0.4);
+	background-color: rgba(20, 20, 20, 0.6);
+	/*background-color: rgba(245, 245, 245, 0.6);*/
 }
 .text-banner h1{
 	font-size: 44px;
@@ -84,9 +90,14 @@ header,footer{
 }
 
 .text-banner p{
-	font-size: 18px;
+	font-size: 26px;
 	text-align: justify;
 }
+.text-banner option{
+	font-size: 36px;
+	text-align: justify;
+}
+
 
 .activity-section{
 	margin:50px;
