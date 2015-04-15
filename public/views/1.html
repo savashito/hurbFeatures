@@ -76,14 +76,22 @@
 			<!-- <hurb-bg-img src="img/out-garden.jpg" fix=true id="sensor"> -->
 			<!-- <hurb-bg-img src="img/castilloQuintana.jpg" fix=true id="sensor"> -->
 
-			<div class ="top-box" ng-click = "sensor()">
+			<div class ="top-box">
 				<div class ="row text-tittle wow fadeInDown"> 
 					<!-- title-image -->
 
 					<h1>Worry no more!</h1>
 
 					<p>
-					<p>Do you have tons of plants everywhere in your garden?</p>
+					<p popover="Esto es mi primer" tooltip="Hurb will help you manage your plants" tooltip-placement="bottom" popover-title="Lets see if this works!! Muahahaha ">
+Do you have tons of plants everywhere in your garden? <i class="btn fa fa-info-circle " ></i> 
+
+					<!-- 	<div class="down-button">
+						<a class="btn" animate-button>
+							
+						</a>
+						</div> -->
+					</p>
 					<p>Not sure when your plant needs more water or if it's drowning?</p>
 					<p>Not sure if your plant is burning or need more sun?</p>
 					<p>Not sure if your plant has the correct amount food (fertilizer)?</p>
@@ -92,7 +100,7 @@
 					<!-- You will appreciate his quick wit and friendly personality... -->
 					<div class ="col-sm-5"/>
 
-					<div class="down-button">
+					<div class="down-button"  ng-click = "sensor()">
 						<a class="btn" animate-button>
 							<p>Custumize it!</p>
 							<i class="fa fa-arrow-circle-right fa-4x" ></i>
