@@ -34,8 +34,25 @@
 					You will appreciate his quick wit and friendly personality...
 					</p> -->
 					<p>
-						 Type of alert <br>
-						 <hurb-combo options='tAlert'/>
+
+						 Way to notify you <br>
+						 <hurb-combo options='tAlert' total-price='this'> </hurb-combo>
+						 Want sound?<br>
+						 <hurb-combo options='tMusic' total-price='this'></hurb-combo>
+						 What you need to know about your plants? <br>
+						 <hurb-combo options='tSensor' total-price='this'></hurb-combo>
+						 Know more! (Soil sensor) <br>
+						 <hurb-combo options='tSoil' total-price='this'></hurb-combo>
+						
+						 Sensor power <br>
+						 <hurb-combo options='tPower' total-price='this'></hurb-combo>
+						 Sensor depth <br>
+						 <hurb-combo options='tDepth' total-price='this'></hurb-combo>
+						
+						Total cost: {{totalPrice}}
+			
+						
+
 					<!-- 	Type of alert
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
 						<select>

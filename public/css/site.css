@@ -22,7 +22,7 @@ header,footer{
 	bottom:40px;
 	/*padding-left:2.0em; */
 	/*position: absolute;*/
-	padding-left:35%;
+	padding-left:45%;
 }
 .down-button i{
 	/*color: white;*/
@@ -91,7 +91,7 @@ header,footer{
 
 .text-banner p{
 	font-size: 26px;
-	text-align: justify;
+	text-align: center;
 }
 .text-banner option{
 	font-size: 36px;

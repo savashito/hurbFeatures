@@ -41,12 +41,45 @@ angular.module('app').controller('mainCtrl',function($scope,$window,$location){
 		$location.hash('hurb');
 
 	};
-
+	$scope.totalPrice = 0;
+	console.log("1 totalPrice",$scope.totalPrice)
 	$scope.tAlert = [
-		{name:'Visual',desc:'Esto es visual'},
-		{name:'Proximity',desc:'Esto es cerca'},
-		{name:'Anywhere',desc:'Esto es lejos'},
+		{name:'Visual',desc:'Use LEDs to indicate what are the needs of your plant',price:1,value:true},
+		{name:'Proximity',desc:'When your near by, your phone will recive notifications of the health and needs of your plant',price:3,value:false},
+		{name:'Anywhere',desc:'Recive notifications from anywhere. Know how your plants are doing while traveling or at work/school.',price:5,value:false},
 	];
+
+	$scope.tMusic = [
+		{name:'Beep',desc:'The sensor will beep to let you know that your plants need something. Different tones and frequency indicate different things',price:1,value:false},
+		{name:'Basic',desc:'Play music to your plants (requires bluetooth or wifi). Your plant will become happy and grow healtier with music.',price:10,value:false},
+		{name:'High definition',desc:'Play high definition music to your plants! (requires bluetooth or wifi). Your plant will become happy and grow healtier with music. Also great ambience for your self!',price:50,value:false},
+	];
+
+	$scope.tSensor = [
+		{name:'Sun sensor',desc:'Indicate exactly how many hours of sun light your plant needs',price:1,value:true},
+		{name:'Moisture sensor',desc:'Indicates exacly how much water your plant needs. Your plant will never dry or drown again',price:1,value:false},
+		{name:'Temperature sensor',desc:'Know when your plant is hot or cold!',price:1,value:false},
+	];
+
+	$scope.tSoil = [
+		{name:'Basic    (macronutrients)',desc:'Know what type and how much ferlizer you plant needs',price:10,value:true},
+		{name:'Specific (micronutrients)',desc:'Know what micronutients the soil is missing so your plant grows as healthy and fast as possible',price:50,value:false},
+		{name:'Ph ',desc:'Know if your plant can absorve the nutrients and how to improve its absorbtion',price:5,value:false},
+	];
+
+	$scope.tPower = [
+		{name:'basic batteries',desc:'1 month batery. We will remember you when to charge your sensor',price:1,value:true},
+		{name:'Extended life',desc:'1 year batteries! worry less about charging!',price:5,value:false},
+		{name:'Solar power',desc:'Never worry of charging your battery (includes extendend life battery, and solar recharging system in case cloudy or solar cells ocluded by leaves).',price:10,value:false},
+	];
+
+	$scope.tDepth = [
+		{name:'Extended (30 cm)',desc:'Extended soil sensor to reach deeper roots. (the nutrients and ph of the soil near the roots is what matters)',price:1,value:true},
+		{name:'Super long (1 m)',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:5,value:false},
+		{name:'Super long (1 m)',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:5,value:false},
+	];
+
+
 
 /*
 	{	'Visual':'esto es visual',
@@ -75,7 +108,7 @@ angular.module('app').controller('mainCtrl',function($scope,$window,$location){
           .animate( { height: "show" }, 2000, name );
       });
 */	
-	$scope.checkboxModel = { value1:false,value3:false,value2:false,};
+	// $scope.checkboxModel = { value1:false,value3:false,value2:false,};
 });
 
 angular.module('app').directive('animateButton',function(){
@@ -150,13 +183,38 @@ angular.module('app').directive('draggable',function(){
 angular.module('app').directive('hurbCombo',function(){
 	return {
 			controller: function($scope,$window){
+				$scope.price = 0;
+				console.log('options',$scope.options);
+				console.log('totalPr',$scope.totalPrice.totalPrice);
+				function updatePrice(){
+
+					$scope.totalPrice.totalPrice-=$scope.price;					
+					$scope.price = 0;
+					for (var i = $scope.options.length - 1; i >= 0; i--) {
+						var op = $scope.options[i];
+						if(op.value)
+							$scope.price += op.price  ;
+					}
+					// update global scope price
+					$scope.totalPrice.totalPrice+=$scope.price;
+					console.log('upPrice ',$scope.totalPrice.totalPrice);
+				}
+				updatePrice();
 				$scope.selected = 0;
 				$scope.open = function(){
 					console.log('Miau <3 MUahaha');
+					updatePrice();
 				};
+
 				$scope.close = function(index){
 					// console.log('Close <3 '+index);
 					$scope.selected = index;
+					$scope.visible = true;
+				};
+				$scope.hide = function(){
+					$scope.visible = false;
+					// console.log('Close <3 '+index);
+					// $scope.selected = index;
 				};
 
 
@@ -173,6 +231,7 @@ angular.module('app').directive('hurbCombo',function(){
 			scope:
 			{
 				options:'=',
+				totalPrice:'='
 				// op:'='
 			}
 	};

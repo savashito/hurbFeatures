@@ -1,6 +1,10 @@
 <div class="row">
-  <div class ="col-sm-3">
-    <div class="btn-group" dropdown is-open="status.isopen">
+
+   <accordion close-others="oneAtATime" class=""  >
+      <accordion-group heading="{{options[selected].name}}"  is-open='true' >
+  <div class ="col-sm-4">
+    
+    <!-- <div class="btn-group" dropdown is-open="status.isopen">
       <button type="button" ng-click="open()" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled">
         {{options[selected].name}} <span class="caret"></span>
       </button>
@@ -8,13 +12,29 @@
          <li  ng-repeat="pl in options track by $index;"  ng-click="close($index)"><a>{{pl.name}}</a></li>
       </ul>
     </div>
-</div>
-  <div class ="col-sm-3">
-    {{options[selected].desc}}
-  </div>
-  <div class ="col-sm-6">
-    <!-- {{options[selected].desc}} -->
+     -->
+     
+  <label class="checkbox" ng-repeat="pl in options track by $index;" ng-mouseover="close($index)"  ng-mouseout="hide()"  ng-click="open()" >
+    <input type="checkbox" ng-model="pl.value" >
+       {{pl.name}} $ {{pl.price}}
+  </label>
+  
   </div>
 
+  <div class ="col-sm-6">
+    <accordion close-others="oneAtATime" class="" ng-hide="!visible" >
+      <accordion-group heading="{{options[selected].name}}"  is-open='true' >
+        {{options[selected].desc}} 
+      </accordion-group>
+    </accordion>
+  </div>
+  <div class ="col-sm-2">
+        $ {{price}}
+        <!-- {{totalPrice.totalPrice}} -->
+
+    <!-- {{options[selected].desc}} -->
+  </div>
+      </accordion-group>
+    </accordion>
 
 </div>
