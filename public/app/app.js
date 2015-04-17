@@ -1,4 +1,4 @@
-angular.module('app',['ngResource','ngRoute',
+angular.module('app',['ngResource','ngRoute','panzoom'
 	'ui.bootstrap']);
 
 angular.module('app').config(function($routeProvider,$locationProvider){
@@ -13,8 +13,9 @@ angular.module('app').config(function($routeProvider,$locationProvider){
 });
 
 angular.module('app').controller('mainCtrl',function($scope,$window,$location){
-	console.log('Scopee');
-    console.log("mainController",$scope);
+$scope.config = {}; // use defaults
+$scope.model = {}; // always pass empty object
+
 	$scope.test = "Hiii";
 	$scope.jobs = [{title:'ventas',desc:"persona que vende"},
 	{title:'compras',desc:"persona que fuma"}];
@@ -43,42 +44,54 @@ angular.module('app').controller('mainCtrl',function($scope,$window,$location){
 	};
 	$scope.totalPrice = 0;
 	console.log("1 totalPrice",$scope.totalPrice)
-	$scope.tAlert = [
+	$scope.tAlert = {name:'Way to notify you',
+		options:[
 		{name:'Visual',desc:'Use LEDs to indicate what are the needs of your plant',price:1,value:true},
 		{name:'Proximity',desc:'When your near by, your phone will recive notifications of the health and needs of your plant',price:3,value:false},
 		{name:'Anywhere',desc:'Recive notifications from anywhere. Know how your plants are doing while traveling or at work/school.',price:5,value:false},
-	];
+	]};
 
-	$scope.tMusic = [
+	$scope.tMusic = {name:'Want sound?',
+		options:[
 		{name:'Beep',desc:'The sensor will beep to let you know that your plants need something. Different tones and frequency indicate different things',price:1,value:false},
 		{name:'Basic',desc:'Play music to your plants (requires bluetooth or wifi). Your plant will become happy and grow healtier with music.',price:10,value:false},
 		{name:'High definition',desc:'Play high definition music to your plants! (requires bluetooth or wifi). Your plant will become happy and grow healtier with music. Also great ambience for your self!',price:50,value:false},
-	];
+	]};
 
-	$scope.tSensor = [
+	$scope.tSensor = {name:'What you need to know about your plants?',
+		options:[
 		{name:'Sun sensor',desc:'Indicate exactly how many hours of sun light your plant needs',price:1,value:true},
 		{name:'Moisture sensor',desc:'Indicates exacly how much water your plant needs. Your plant will never dry or drown again',price:1,value:false},
 		{name:'Temperature sensor',desc:'Know when your plant is hot or cold!',price:1,value:false},
-	];
+	]};
 
-	$scope.tSoil = [
+	$scope.tSoil = {name:'Know more! (Soil sensor)',
+		options:[
 		{name:'Basic    (macronutrients)',desc:'Know what type and how much ferlizer you plant needs',price:10,value:true},
 		{name:'Specific (micronutrients)',desc:'Know what micronutients the soil is missing so your plant grows as healthy and fast as possible',price:50,value:false},
 		{name:'Ph ',desc:'Know if your plant can absorve the nutrients and how to improve its absorbtion',price:5,value:false},
-	];
+	]};
 
-	$scope.tPower = [
+	$scope.tPower = {name:'Sensor power',
+		options:[
 		{name:'basic batteries',desc:'1 month batery. We will remember you when to charge your sensor',price:1,value:true},
 		{name:'Extended life',desc:'1 year batteries! worry less about charging!',price:5,value:false},
 		{name:'Solar power',desc:'Never worry of charging your battery (includes extendend life battery, and solar recharging system in case cloudy or solar cells ocluded by leaves).',price:10,value:false},
-	];
+	]};
 
-	$scope.tDepth = [
+	$scope.tDepth = {name:'Sensor depth',
+		options:[
 		{name:'Extended (30 cm)',desc:'Extended soil sensor to reach deeper roots. (the nutrients and ph of the soil near the roots is what matters)',price:1,value:true},
 		{name:'Super long (1 m)',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:5,value:false},
-		{name:'Super long (1 m)',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:5,value:false},
-	];
+		{name:'Tree like long (3 m)',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:20,value:false},
+	]};
 
+	$scope.tWater = {name:'Automatic care',
+		options:[
+		{name:'Basic watering ',desc:'attach a water bottle to your hurb so it recieves the correct amount of water when needed',price:3,value:true},
+		{name:'Basic fetilizer',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:5,value:false},
+		{name:'Super long (1 m)',desc:'Super long sensor to reach those deep roots. (the nutrients and ph of the soil near the roots is what matters)',price:5,value:false},
+	]};
 
 
 /*
@@ -217,7 +230,9 @@ angular.module('app').directive('hurbCombo',function(){
 					// $scope.selected = index;
 				};
 
-
+				$scope.name = $scope.options.name;
+				$scope.options = $scope.options.options;
+				updatePrice();
 				// console.log('sel ',$scope.options[$scope.selected]);
 
 

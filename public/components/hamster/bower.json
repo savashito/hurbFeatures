@@ -1,0 +1,18 @@
+{
+  "name": "hamster",
+  "author": "Xiaoyi Shi <ashi009@gmail.com>",
+  "description": "Hamster is a small independent script that will help you to preserve error stack cross browsers, and also capture unexpected error that leaked to window scope.",
+  "main": "hamster.js",
+  "keywords": [
+    "stack",
+    "error"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "package.json",
+    "test",
+    "node_modules",
+    "bower_components"
+  ]
+}

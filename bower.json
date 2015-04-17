@@ -30,6 +30,9 @@
     "jquery": "~2.1.3",
     "fontawesome": "~4.3.0",
     "wow": "~1.1.2",
-    "animate.css": "~3.2.6"
+    "animate.css": "~3.2.6",
+    "angular-pan-zoom": "~1.0.7",
+    "hamster": "~0.3.0",
+    "angular-mousewheel": "~1.0.4"
   }
 }

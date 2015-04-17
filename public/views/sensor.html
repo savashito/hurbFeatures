@@ -1,6 +1,6 @@
 	<div class="row">
 
-
+  <panzoom config="config" model="model" style="width:800px; height: 600px">
 			<hurb-bg-img src="img/Nevado_de_Toluca.jpg" fix=true id="hurb">
 
 
@@ -35,19 +35,13 @@
 					</p> -->
 					<p>
 
-						 Way to notify you <br>
 						 <hurb-combo options='tAlert' total-price='this'> </hurb-combo>
-						 Want sound?<br>
 						 <hurb-combo options='tMusic' total-price='this'></hurb-combo>
-						 What you need to know about your plants? <br>
 						 <hurb-combo options='tSensor' total-price='this'></hurb-combo>
-						 Know more! (Soil sensor) <br>
 						 <hurb-combo options='tSoil' total-price='this'></hurb-combo>
-						
-						 Sensor power <br>
 						 <hurb-combo options='tPower' total-price='this'></hurb-combo>
-						 Sensor depth <br>
 						 <hurb-combo options='tDepth' total-price='this'></hurb-combo>
+						 <hurb-combo options='tWater' total-price='this'></hurb-combo>
 						
 						Total cost: {{totalPrice}}
 			
@@ -94,6 +88,6 @@
 			</div>
 
 			</hurb-bg-img>
-
+ </panzoom>
 
 	</div>
